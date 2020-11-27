@@ -42,7 +42,13 @@
     <link href="/static/signin.css" rel="stylesheet" />
   </head>
   <body class="text-center">
-    <form class="form-signin" action="/login" method="get">
+    <!-- 
+      * Go Live로 이거 켰을 때 login_test.py랑 포트 넘버가 다르다.
+      이때, action에 http://locatlhost:8080 을 붙이면 제대로 연결이 된다.  
+      * html은 파라미터 적을 때 구분자 , 안쓴다.
+      * method default값은 get   
+    -->
+    <form class="form-signin" action="http://localhost:8080/login" method="get">
       <img
         class="mb-4"
         src="/static/brand/bootstrap-solid.svg"
