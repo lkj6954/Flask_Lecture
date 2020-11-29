@@ -14,6 +14,7 @@ def test():
         print(data['email'])
     if request.method == 'GET':
         print('GET')
+        # email값을 html로 불러들이는데 따옴표를 쓰네.
         user = request.args.get('email')
         print(user)
     if request.method == 'PUT':
@@ -26,7 +27,6 @@ def test():
         print(user)
 
     return make_response(jsonify({'status': True}), 200)
-
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port="8082")
