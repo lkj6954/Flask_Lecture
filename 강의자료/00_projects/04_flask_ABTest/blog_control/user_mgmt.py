@@ -1,9 +1,7 @@
 from flask_login import UserMixin
 from db_model.mysql import conn_mysqldb
 
-
 class User(UserMixin):
-
     def __init__(self, user_id, user_email, blog_id):
         self.id = user_id
         self.user_email = user_email
