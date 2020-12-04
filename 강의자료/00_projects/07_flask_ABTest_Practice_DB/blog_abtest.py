@@ -11,7 +11,7 @@ app = Flask(__name__, static_url_path='/static')
 CORS(app)
 app.secure_key = 'dave_server'
 
-app.register_blueprint(blog.blog_abtest, url_prefix='/blog')
+app.register_blueprint(blog.blog_abtest, url_prefix='/blog') #blog_view의 blog.py 파일의 blog_abtest 블루프린트 객체
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.session_protection = 'strong'
@@ -19,7 +19,7 @@ login_manager.session_protection = 'strong'
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.get(user_id)
+    return User.get(user_id) # Q. User 클래스는 blog_control\user_mgmt.py에 있는데 어떻게..?
 
 
 @login_manager.unauthorized_handler
@@ -28,4 +28,4 @@ def unauthorized():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port='8080', debug=True)
+    app.run(host='127.0.0.1', port='8080', debug=True)

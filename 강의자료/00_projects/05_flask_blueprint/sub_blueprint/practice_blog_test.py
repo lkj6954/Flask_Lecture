@@ -1,7 +1,7 @@
 from flask import Blueprint
 
-blog_ab = Blueprint('blog2', __name__)
+blog_ab = Blueprint('blog_ab', __name__)
 
-@blog_ab.route('/blog1')
-def blog():
-    return 'test Blueprint'
+@blog_ab.route('/main')
+def blog_main():
+    return "blog main page"
