@@ -19,7 +19,7 @@ login_manager.session_protection = 'strong'
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.get(user_id) # Q. User 클래스는 blog_control\user_mgmt.py에 있는데 어떻게..?
+    return User.get(user_id) # Q. User 클래스는 blog_control\user_mgmt.py에 있는데 어떻게..? => 강사님이 실수. 엄밀히 말하면 여기서는 안써가지고 import 안하심.
 
 
 @login_manager.unauthorized_handler

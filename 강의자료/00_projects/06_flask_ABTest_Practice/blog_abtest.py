@@ -4,7 +4,7 @@ from flask_cors import CORS
 from blog_view import blog
 import os
 
-# https 만을 지원하는 기능을 http 에서 테스트할 때 필요한 설정
+# 추후 '네이버로 로그인' 등의 기능을 위해 보안성을 높이기 위해 https로 만들어야 되는데, 그때 필요
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 
 app = Flask(__name__, static_url_path='/static')
